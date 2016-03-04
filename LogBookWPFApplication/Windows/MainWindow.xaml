@@ -1,0 +1,30 @@
+﻿<Window x:Class="LogBookWPFApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LogBookWPFApplication"
+        mc:Ignorable="d"
+        Title="Welcome" Height="400" Width="700" Closed="Window_Closed">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0.2"/>
+                <GradientStop Color="#FF2B398B" Offset="0.2"/>
+                <GradientStop Color="#FF2B398B" Offset="0.5"/>
+                <GradientStop Color="#FFFDBB30" Offset="0.5"/>
+                <GradientStop Color="#FFFDBB30" Offset="0.8"/>
+                <GradientStop Color="White" Offset="0.8"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="btnDailyRegister" FontFamily="Franklin Gothic Demi" FontSize="22" Content="Daily Register" HorizontalAlignment="Left" Margin="24,86,0,0" VerticalAlignment="Top" Width="190" Height="90" Click="btnDailyRegister_Click"/>
+
+        <Button x:Name="btnWeeklyLogbook" Foreground="Black" FontFamily="Franklin Gothic Demi" FontSize="22"  Content="Weekly Logbooks" HorizontalAlignment="Left" Margin="24,199,0,0" VerticalAlignment="Top" Width="190" Height="90" Click="btnWeeklyLogbook_Click" />
+
+        <Button x:Name="btnUserControl" Foreground="Black"  FontSize="22" FontFamily="Franklin Gothic Demi"  Content="User Control" HorizontalAlignment="Left" Margin="445,86,0,0" VerticalAlignment="Top" Width="190" Height="90"  Click="btnUserControl_Click"/>
+        <Button x:Name="btnMonthlyEvaluation" Foreground="Black" FontSize="22" FontFamily="Franklin Gothic Demi"  Content="Monthly Evaluations" HorizontalAlignment="Left" Margin="236,86,0,0" VerticalAlignment="Top" Width="190" Height="90" />
+        <Button x:Name="button"  FontSize="16" FontFamily="Franklin Gothic Demi" Background="#2b398b" Foreground="#FFF" Content="Logout" HorizontalAlignment="Left" Margin="550,318,0,0" VerticalAlignment="Top" Width="117" Click="button_Click" BorderBrush="Black" Height="41"/>
+        <Label x:Name="lblDisplay" FontFamily="Franklin Gothic Demi" Foreground="#fff" Content="Username and Account Image goes here! PLACEHOLDER!" HorizontalAlignment="Left" Margin="384,10,0,0" VerticalAlignment="Top" Width="283" Background="#FF2B398B" Height="50"/>
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="251" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Fill" Margin="24,0,0,0"/>
+    </Grid>
+</Window>

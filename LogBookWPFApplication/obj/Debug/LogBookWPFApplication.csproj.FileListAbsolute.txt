@@ -1,0 +1,88 @@
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\DailyRegister.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LogbookCreation.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LoginPage.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\RegisterNewLearner.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\WeeklyLogbook.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\App.g.cs
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_MarkupCompile.cache
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_MarkupCompile.lref
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.pdb
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.exe.config
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.exe
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.pdb
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.dll
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\MySql.Data.dll
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.xml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\DailyRegister.baml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LogbookCreation.baml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LoginPage.baml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\MainWindow.baml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\RegisterNewLearner.baml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\WeeklyLogbook.baml
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.g.resources
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.Properties.Resources.resources
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.csproj.GenerateResource.Cache
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.exe
+C:\Users\LMaboho\Documents\Visual Studio 2015\Projects\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.csprojResolveAssemblyReference.cache
+F:\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.exe.config
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.exe
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.pdb
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.csprojResolveAssemblyReference.cache
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\DailyRegister.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LogbookCreation.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LoginPage.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\MainWindow.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\RegisterNewLearner.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\WeeklyLogbook.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\App.g.cs
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_MarkupCompile.cache
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_MarkupCompile.lref
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\DailyRegister.baml
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LogbookCreation.baml
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LoginPage.baml
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\MainWindow.baml
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\RegisterNewLearner.baml
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\WeeklyLogbook.baml
+F:\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.g.resources
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.exe
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.dll
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.exe.config
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\LogBookWPFApplication.pdb
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\MySql.Data.dll
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.xml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\DailyRegister.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LogbookCreation.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LoginPage.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\RegisterNewLearner.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\WeeklyLogbook.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\App.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_Content.g.cs
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_MarkupCompile.cache
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication_MarkupCompile.lref
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\App.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\DailyRegister.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LogbookCreation.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\LoginPage.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\MainWindow.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\RegisterNewLearner.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\Windows\WeeklyLogbook.baml
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.g.resources
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.Properties.Resources.resources
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.csproj.GenerateResource.Cache
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.exe
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.pdb
+C:\Users\LMaboho\Documents\LogBookWPFApplication\LogBookWPFApplication\obj\Debug\LogBookWPFApplication.csprojResolveAssemblyReference.cache

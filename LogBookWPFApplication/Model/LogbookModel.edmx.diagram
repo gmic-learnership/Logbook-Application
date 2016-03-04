@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6821182c67444d9caaf913c776a9e08f" Name="Diagram1" ShowGrid="false">
+        <EntityTypeShape EntityType="LogBookAppDBModel.AttendanceDetail" Width="1.5" PointX="5.25" PointY="3.125" />
+        <EntityTypeShape EntityType="LogBookAppDBModel.AttendanceMaster" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="LogBookAppDBModel.Person" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="LogBookAppDBModel.Role" Width="1.5" PointX="0.75" PointY="3.375" />
+        <EntityTypeShape EntityType="LogBookAppDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" />
+        <AssociationConnector Association="LogBookAppDBModel.FK_AttendanceDetails_AttendanceMaster" />
+        <AssociationConnector Association="LogBookAppDBModel.FK_AttendanceDetails_Person" />
+        <AssociationConnector Association="LogBookAppDBModel.FK_AttendanceMaster_Role" />
+        <AssociationConnector Association="LogBookAppDBModel.FK_Person_Role" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LogBookAppDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="LogBookAppDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AttendanceDetails" EntityType="LogBookAppDBModel.AttendanceDetail" />
+    <EntitySet Name="AttendanceMasters" EntityType="LogBookAppDBModel.AttendanceMaster" />
+    <EntitySet Name="People" EntityType="LogBookAppDBModel.Person" />
+    <EntitySet Name="Roles" EntityType="LogBookAppDBModel.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="LogBookAppDBModel.sysdiagram" />
+    <AssociationSet Name="FK_AttendanceDetails_AttendanceMaster" Association="LogBookAppDBModel.FK_AttendanceDetails_AttendanceMaster">
+      <End Role="AttendanceMaster" EntitySet="AttendanceMasters" />
+      <End Role="AttendanceDetail" EntitySet="AttendanceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttendanceDetails_Person" Association="LogBookAppDBModel.FK_AttendanceDetails_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="AttendanceDetail" EntitySet="AttendanceDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AttendanceMaster_Role" Association="LogBookAppDBModel.FK_AttendanceMaster_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="AttendanceMaster" EntitySet="AttendanceMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Role" Association="LogBookAppDBModel.FK_Person_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AttendanceDetail">
+    <Key>
+      <PropertyRef Name="DetaiID" />
+    </Key>
+    <Property Name="DetaiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LearnerID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TrainedIn" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MentorID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AttendanceMaster" Relationship="LogBookAppDBModel.FK_AttendanceDetails_AttendanceMaster" FromRole="AttendanceDetail" ToRole="AttendanceMaster" />
+    <NavigationProperty Name="Person" Relationship="LogBookAppDBModel.FK_AttendanceDetails_Person" FromRole="AttendanceDetail" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="AttendanceMaster">
+    <Key>
+      <PropertyRef Name="AttID" />
+    </Key>
+    <Property Name="AttID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AttendanceDetails" Relationship="LogBookAppDBModel.FK_AttendanceDetails_AttendanceMaster" FromRole="AttendanceMaster" ToRole="AttendanceDetail" />
+    <NavigationProperty Name="Role" Relationship="LogBookAppDBModel.FK_AttendanceMaster_Role" FromRole="AttendanceMaster" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="LearnerId" />
+    </Key>
+    <Property Name="LearnerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IDNr" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="ContactNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AttendanceDetails" Relationship="LogBookAppDBModel.FK_AttendanceDetails_Person" FromRole="Person" ToRole="AttendanceDetail" />
+    <NavigationProperty Name="Role" Relationship="LogBookAppDBModel.FK_Person_Role" FromRole="Person" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="AttendanceMasters" Relationship="LogBookAppDBModel.FK_AttendanceMaster_Role" FromRole="Role" ToRole="AttendanceMaster" />
+    <NavigationProperty Name="People" Relationship="LogBookAppDBModel.FK_Person_Role" FromRole="Role" ToRole="Person" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_AttendanceDetails_AttendanceMaster">
+    <End Type="LogBookAppDBModel.AttendanceMaster" Role="AttendanceMaster" Multiplicity="1" />
+    <End Type="LogBookAppDBModel.AttendanceDetail" Role="AttendanceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttendanceMaster">
+        <PropertyRef Name="AttID" />
+      </Principal>
+      <Dependent Role="AttendanceDetail">
+        <PropertyRef Name="MentorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttendanceDetails_Person">
+    <End Type="LogBookAppDBModel.Person" Role="Person" Multiplicity="1" />
+    <End Type="LogBookAppDBModel.AttendanceDetail" Role="AttendanceDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="LearnerId" />
+      </Principal>
+      <Dependent Role="AttendanceDetail">
+        <PropertyRef Name="LearnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AttendanceMaster_Role">
+    <End Type="LogBookAppDBModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="LogBookAppDBModel.AttendanceMaster" Role="AttendanceMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="AttendanceMaster">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Role">
+    <End Type="LogBookAppDBModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="LogBookAppDBModel.Person" Role="Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
