@@ -8,13 +8,20 @@ namespace LogBookWPFApplication
 {
     public class attribs
     {
-      //  public string Names { get; set; }
+        public string Name { get; set; }
         public int Hours { get; set; }
 
         public attribs()
         {
-//Names = Names;
+            Name = Name;
             Hours = Hours;
         }
+
+        public attribs(string name, int hours)
+        {
+            Name = name;
+            Hours = hours;
+        }
+
     }
 }

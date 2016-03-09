@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogBookWPFApplication"
-        mc:Ignorable="d"
+        mc:Ignorable="d" 
         Title="Personal information" Height="492.737" Width="963.687" Loaded="Window_Loaded">
     <Grid Margin="0,0,2,0">
         <Grid.Background>
@@ -30,7 +30,6 @@
         <TextBox x:Name="txtSurname" HorizontalAlignment="Left" FontFamily="Franklin Gothic Demi" Height="28" Margin="155,150,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Surname, ElementName=dgrdAllInfo}" VerticalAlignment="Top" Width="223" FontSize="16"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" FontFamily="Franklin Gothic Demi" Height="28" Margin="155,204,0,0" TextWrapping="Wrap"  Text="{Binding SelectedItem.EmailAddress, ElementName=dgrdAllInfo}" VerticalAlignment="Top" Width="223" FontSize="16"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" FontFamily="Franklin Gothic Demi" Height="28" Margin="155,257,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Password, ElementName=dgrdAllInfo}" VerticalAlignment="Top" Width="223" FontSize="16"/>
-        <TextBox x:Name="txtRole" HorizontalAlignment="Left" FontFamily="Franklin Gothic Demi" Height="28" Margin="155,310,0,0" TextWrapping="Wrap" Text="{Binding SelectedItem.Role, ElementName=dgrdAllInfo}" VerticalAlignment="Top" Width="223" FontSize="16"/>
         <Label x:Name="label" FontSize="16" Foreground="#FFF" Content="Name:" FontFamily="Franklin Gothic Demi" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top" Height="28" Width="138" />
         <Label x:Name="label1" Foreground="#FFF" Content="Surname:" FontFamily="Franklin Gothic Demi" HorizontalAlignment="Left" Margin="10,150,0,0" VerticalAlignment="Top" Height="28" Width="138" FontSize="16"/>
         <Label x:Name="label3" Foreground="#FFF" Content="Email Address:" FontFamily="Franklin Gothic Demi" HorizontalAlignment="Left" Margin="10,204,0,0" VerticalAlignment="Top" Height="28" Width="138" FontSize="16"/>
@@ -40,5 +39,6 @@
         <Button x:Name="btnDelete" FontSize="16" Foreground="#FFF" Background="#2b398b" Content="Delete Learner Info" FontFamily="Franklin Gothic Demi" HorizontalAlignment="Left" Margin="525,406,0,0" VerticalAlignment="Top" Width="207" Height="45" Click="btnDelete_Click"/>
         <Button x:Name="btnAdd" FontSize="16" Background="#2b398b" Foreground="#FFF" FontFamily="Franklin Gothic Demi"   Content="Add Learner" HorizontalAlignment="Left" Margin="313,407,0,0" VerticalAlignment="Top" Width="207" Height="45" Click="btnAdd_Click"/>
         <Image x:Name="imgLogo"  HorizontalAlignment="Center" Height="76" VerticalAlignment="Top" Width="222" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Fill" Margin="10,10,0,0"/>
+        <ComboBox x:Name="cmbRole" HorizontalAlignment="Left" Margin="155,310,0,0" VerticalAlignment="Top" Width="223" Height="28"/>
     </Grid>
 </Window>

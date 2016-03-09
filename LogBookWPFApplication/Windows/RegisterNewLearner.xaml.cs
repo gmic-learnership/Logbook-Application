@@ -81,7 +81,7 @@ namespace LogBookWPFApplication
             {
                
                 thisConnection.Open();
-                comm = new SqlCommand(string.Format("UPDATE Person SET Name='{0}', Surname='{1}', EmailAddress='{2}', Password='{3}', RoleID='{4}' WHERE PersonID='{5}'", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, txtRole.Text, Learner.UserID), thisConnection);
+                comm = new SqlCommand(string.Format("UPDATE Person SET Name='{0}', Surname='{1}', EmailAddress='{2}', Password='{3}', RoleID='{4}' WHERE PersonID='{5}'", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, cmbRole.SelectedValue, Learner.UserID), thisConnection);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -95,7 +95,7 @@ namespace LogBookWPFApplication
                 txtEmail.Clear();
                 txtName.Clear();
                 txtPassword.Clear();
-                txtRole.Clear();
+                
                 txtSurname.Clear();
             }
 
@@ -104,7 +104,7 @@ namespace LogBookWPFApplication
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
 
-            if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtSurname.Text) ||  String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtPassword.Text) || String.IsNullOrEmpty(txtRole.Text))
+            if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtSurname.Text) ||  String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtPassword.Text) || String.IsNullOrEmpty(cmbRole.Text))
             {
                 MessageBox.Show("Please make sure you have filled every field."); 
             }
@@ -115,7 +115,7 @@ namespace LogBookWPFApplication
             try
             {
                 thisConnection.Open();
-                 comm = new SqlCommand(string.Format("INSERT INTO Person VALUES('{0}','{1}','{2}','{3}','{4}')", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, txtRole.Text), thisConnection);
+                 comm = new SqlCommand(string.Format("INSERT INTO Person VALUES('{0}','{1}','{2}','{3}','{4}')", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, cmbRole.Text), thisConnection);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -129,7 +129,7 @@ namespace LogBookWPFApplication
                 txtEmail.Clear();
                 txtName.Clear();
                 txtPassword.Clear();
-                txtRole.Clear();
+               
                 txtSurname.Clear();
             }
             }
@@ -160,7 +160,7 @@ namespace LogBookWPFApplication
                     txtEmail.Clear();
                     txtName.Clear();
                     txtPassword.Clear();
-                    txtRole.Clear();
+                    
                     txtSurname.Clear();
                 }
             }

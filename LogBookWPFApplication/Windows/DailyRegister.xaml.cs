@@ -26,7 +26,7 @@ namespace LogBookWPFApplication
     public partial class DailyRegister : Window
     {
         ConnectionsSQL con = new ConnectionsSQL();
-        int mentorID = 0;
+        
         public string name;
         public string password;
         public List<attribs> personAttrib;
@@ -35,6 +35,7 @@ namespace LogBookWPFApplication
         public List<string> names2 { get; set; }
         public List<int> ID = new List<int>();
         public List<int> MenID = new List<int>();
+        List<attribs> persons;
 
 
         public DailyRegister()
@@ -46,38 +47,22 @@ namespace LogBookWPFApplication
 
             personAttrib = new List<attribs>()
             {
-                new attribs() { }
+               // new attribs() { }
             };
            
             InitializeComponent();
             dprDate.SelectedDate = DateTime.Now;
             Name.ItemsSource = names;
 
-            cmbMentors.ItemsSource= names2;
+            names2 = getNames2();
+            cmbMentors.ItemsSource = names2;
             dgrdInformation.ItemsSource = personAttrib;
 
+            getInfo();
+
         }
     
-    
-        private void cmbMentors_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            using (LogBookApplicationDBEntities db = new LogBookApplicationDBEntities())
-            {
-                List<Person> mentor = (from x in db.People
-                                       where x.RoleID == 2
-                                       select x).ToList();
-                foreach (var item in mentor)
-                {
-                    //MenID.Add(item.PersonID);
-
-                    if (cmbMentors.SelectedItem.ToString() == item.Name)
-                    {
-                        mentorID = item.PersonID;
-                    }
-                }
-            }
-        }
-
+ 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
@@ -157,88 +142,174 @@ namespace LogBookWPFApplication
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            DataTable dt = new DataTable();
 
-
-            int menteeID = Name.DisplayIndex + 1;
 
             try
             {
-        
+
                 List<string> n = new List<string>();
-               
+
                 var master = new AttendanceMaster();
                 var attDetail = new AttendanceDetail();
                 var person = new Person();
-                
                
+
                 using (var dbSave = new LogBookApplicationDBEntities())
                 {
-
-                    master.Date = dprDate.SelectedDate.Value;
-                    master.TrainedIn = txtComments.Text;
-                    dbSave.AttendanceMasters.Add(master);
-                    dbSave.SaveChanges();
-                   // n = getNames();
-
-                    //List<AttendanceMaster> a = (from x in dbSave.AttendanceMasters
-                    //                            where x.Date == dprDate.SelectedDate
-                    //                            select x).ToList();
-
-                    foreach (var iii in personAttrib)
+                    if (cmbMentors.SelectedIndex < 0 || txtComments.Text == "")
                     {
-                       
-                        attDetail.Hours = iii.Hours;
-                        
-                        attDetail.MasterID = master.MasterID;
-
-                        attDetail.MentorID = mentorID;
-
-                        attDetail.MenteeID = menteeID;
-                        
-                        dbSave.AttendanceDetails.Add(attDetail);
-                        dbSave.SaveChanges();
+                        MessageBox.Show("Please make sure you have provided all details");
                     }
-                   
-                    dbSave.AttendanceDetails.Add(attDetail);
-                    dbSave.SaveChanges();
-                }
-              
+                    else
+                    {
+
+                            if (master.Date != dprDate.SelectedDate)
+                            {
+                                btnSave.IsEnabled = true;
+                                master.Date = dprDate.SelectedDate.Value;
+                                master.TrainedIn = txtComments.Text;
+                                dbSave.AttendanceMasters.Add(master);
+                                dbSave.SaveChanges();
+                            }
+
+                                int index = 0;
+                                foreach (var iii in persons)
+                                {
+
+                                    DataGridCell c = DataGridHelper.GetCell(dgrdInformation, index, 0);
+                                    ComboBox c1 = (ComboBox)c.Content;
+                                   // MessageBox.Show(c1.Text.ToString());
+
+                                    attDetail.Hours = iii.Hours;
+                                    attDetail.MasterID = master.MasterID;
+
+                                    attDetail.MentorID = MenID.ElementAt(cmbMentors.SelectedIndex);
+
+                                    attDetail.MenteeID = ID.ElementAt(c1.SelectedIndex);
+
+                                    dbSave.AttendanceDetails.Add(attDetail);
+                                    dbSave.SaveChanges();
+                                    index++;
+                                }
+
+                            for (int i = 0; i < dgrdInformation.SelectedIndex; i++)
+                            {
+                            
                               
+                            }
+                            MessageBox.Show("Information successfully saved");
+                        }
+
+                    
+                }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Please make sure you have provided all details");
             }
-
+        
         }
 
         private void dprDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
+
+            getInfo();
             
+        }
+
+        void getInfo()
+        {
+            List<string> selectedNames = new List<string>();
+            persons = new List<attribs>();
+
             using (LogBookApplicationDBEntities db = new LogBookApplicationDBEntities())
+            {
+                List<AttendanceDetail> learnerDetails = (from x in db.AttendanceDetails
+                                                         join y in db.AttendanceMasters on x.MasterID equals y.MasterID
+                                                         //join z in db.People on y.MenteeID equals z.PersonID 
+                                                         where y.Date == dprDate.SelectedDate
+                                                         select x).ToList();
+
+
+
+                List<AttendanceMaster> mm = (from v in db.AttendanceMasters
+                                             where v.Date == dprDate.SelectedDate
+                                             select v).ToList();
+                //  List<int> hours = new List<int>();
+
+                List<attribs> a = new List<attribs>()
+                { };
+
+                foreach (var item in learnerDetails)
                 {
-                    List<AttendanceMaster> mentor = (from x in db.AttendanceMasters
-                                                     join y in db.AttendanceDetails
-                                                     on x.MasterID equals y.MasterID 
-                                                     join z in db.People on y.MenteeID equals z.PersonID 
-                                           where x.Date.ToString() == dprDate.SelectedDate.ToString()
-                                           select x).ToList();
-                    foreach (var item in mentor)
+
+
+                    foreach (var i in ID)
                     {
-                        dgrdInformation.ItemsSource = mentor;
+                        foreach (var comm in mm)
+                        {
+                            txtComments.Text = comm.TrainedIn;
+                            if (dprDate.SelectedDate != comm.Date)
+                            {
+                                cmbMentors.SelectedIndex = 0;
+                                txtComments.Text = "";
+                            }
+                        }
+
+                        if (i.Equals(item.MenteeID))
+                        {
+
+                            //   hours.Add(item.Hours);
+                            selectedNames.Add(names.ElementAt(ID.IndexOf(item.MenteeID)));
+                            cmbMentors.SelectedIndex = MenID.IndexOf(item.MentorID);
+                        }
+
                     }
                 }
-            
-           // BindMyData();
+
+                    for (int i = 0; i < learnerDetails.Count;i++)
+                    {
+
+                        int id = learnerDetails[i].MenteeID;
+                        List<Person> mentee = (from x in db.People
+                                               where x.PersonID == id
+                                               select x).ToList();
+
+                        persons.Add(new attribs(mentee[0].Name + " " + mentee[0].Surname, learnerDetails[i].Hours));
+                    }
+
+                    dgrdInformation.ItemsSource = persons;
+                dgrdInformation.SelectedIndex = 0;
+
+                }
         }
 
         private void dgrdInformation_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
-            dgrdInformation.CanUserAddRows = true;
-            
+        }
 
+        private void dgrdInformation_CurrentCellChanged(object sender, EventArgs e)
+        {
+
+            //DataGridCell c = DataGridHelper.GetCell(dgrdInformation, dgrdInformation.SelectedIndex, 1);
+            //TextBlock c1 = (TextBlock)c.Content;
+
+            //try
+            //{
+            //    if (int.Parse(c1.Text) >= 25)
+            //    {
+            //        MessageBox.Show("Please enter a value less than 24");
+            //        c1.Text = "0";
+            //        c1.Focus();
+
+            //    }
+            //}
+            //catch(Exception)
+            //{
+            //    MessageBox.Show("Please enter a value less than 24");
+            //}
+           
         }
     }
 }

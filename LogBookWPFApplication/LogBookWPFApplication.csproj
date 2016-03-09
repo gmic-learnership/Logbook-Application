@@ -82,6 +82,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppData\dataGridHelper.cs" />
     <Compile Include="AppData\User.cs" />
     <Compile Include="AppData\ConnectionsSQL.cs" />
     <Compile Include="AttendanceDetail.cs">
@@ -209,6 +210,7 @@
     <Resource Include="Media\Pictures\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="dvtIcon.ico" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

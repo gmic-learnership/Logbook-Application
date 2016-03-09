@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogBookWPFApplication"
-        mc:Ignorable="d"
-        Title="Login Page" Height="241.666" Width="431.25" Closing="Window_Closing">
+        mc:Ignorable="d" 
+        Title="Login Page" Height="241.666" Width="431.25" Closing="Window_Closing" Icon="/dvtIcon.ico">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
