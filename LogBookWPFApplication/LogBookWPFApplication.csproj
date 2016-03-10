@@ -211,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="dvtIcon.ico" />
+    <Resource Include="Media\Pictures\Image3.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

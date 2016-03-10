@@ -16,6 +16,7 @@ using System.Data.SqlClient;
 using System.Data;
 using LogBookWPFApplication.AppData;
 using System.Collections.ObjectModel;
+using System.Text.RegularExpressions;
 //using LogBookWPFApplication.DailyRegister;
 
 namespace LogBookWPFApplication
@@ -57,7 +58,7 @@ namespace LogBookWPFApplication
             names2 = getNames2();
             cmbMentors.ItemsSource = names2;
             dgrdInformation.ItemsSource = personAttrib;
-
+            cmbMentors.SelectedIndex = 0;
             getInfo();
 
         }
@@ -86,6 +87,7 @@ namespace LogBookWPFApplication
                     List<Person> mentee = (from x in db.People
                                            where x.RoleID == 1
                                            select x).ToList();
+                    //mentee.Where(c => c.RoleID == 1);
 
                     List<string> names = new List<string>();
 
@@ -146,7 +148,7 @@ namespace LogBookWPFApplication
 
             try
             {
-
+               
                 List<string> n = new List<string>();
 
                 var master = new AttendanceMaster();
@@ -162,19 +164,34 @@ namespace LogBookWPFApplication
                     }
                     else
                     {
+                        List<AttendanceMaster> learnerDetails = (from x in dbSave.AttendanceMasters
+                                                                 join y in dbSave.AttendanceDetails on x.MasterID equals y.MasterID
+                                                                 //join z in db.People on y.MenteeID equals z.PersonID 
+                                                                 where x.Date == dprDate.SelectedDate
+                                                                 select x).ToList();
 
-                            if (master.Date != dprDate.SelectedDate)
-                            {
-                                btnSave.IsEnabled = true;
-                                master.Date = dprDate.SelectedDate.Value;
-                                master.TrainedIn = txtComments.Text;
-                                dbSave.AttendanceMasters.Add(master);
-                                dbSave.SaveChanges();
-                            }
+                        if (master.Date != dprDate.SelectedDate)
+                        {
+                            btnSave.IsEnabled = true;
+                            master.Date = dprDate.SelectedDate.Value;
+                            master.TrainedIn = txtComments.Text;
+                            dbSave.AttendanceMasters.Add(master);
+                            dbSave.SaveChanges();
+                        }
+                                
+                            
+                        
+                           
 
                                 int index = 0;
                                 foreach (var iii in persons)
                                 {
+                            if (!Regex.IsMatch((iii.Hours).ToString(), "^((?:[0-9]|1[0-9]|2[0-3])(?:\\.\\d{1,2})?|24(?:\\.00?)?)$"))
+                            {
+                                MessageBox.Show("Invalid input for Hours. Please re-enter a value between 0 and 24.");
+                                return;
+                            }
+
 
                                     DataGridCell c = DataGridHelper.GetCell(dgrdInformation, index, 0);
                                     ComboBox c1 = (ComboBox)c.Content;
@@ -192,12 +209,8 @@ namespace LogBookWPFApplication
                                     index++;
                                 }
 
-                            for (int i = 0; i < dgrdInformation.SelectedIndex; i++)
-                            {
-                            
-                              
-                            }
-                            MessageBox.Show("Information successfully saved");
+                          
+                            MessageBox.Show("Information successfully saved.");
                         }
 
                     
@@ -213,7 +226,8 @@ namespace LogBookWPFApplication
 
         private void dprDate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            txtComments.Clear();
+            dgrdInformation.ItemsSource = personAttrib;
             getInfo();
             
         }
@@ -250,11 +264,7 @@ namespace LogBookWPFApplication
                         foreach (var comm in mm)
                         {
                             txtComments.Text = comm.TrainedIn;
-                            if (dprDate.SelectedDate != comm.Date)
-                            {
-                                cmbMentors.SelectedIndex = 0;
-                                txtComments.Text = "";
-                            }
+
                         }
 
                         if (i.Equals(item.MenteeID))
@@ -285,31 +295,17 @@ namespace LogBookWPFApplication
                 }
         }
 
-        private void dgrdInformation_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        private void image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-        }
+            MainWindow main = new MainWindow();
+            main.Activate();
+            if (Learner.RoleIdentification == 1)
+            {
+                main.btnUserControl.IsEnabled = false;
+            }
 
-        private void dgrdInformation_CurrentCellChanged(object sender, EventArgs e)
-        {
-
-            //DataGridCell c = DataGridHelper.GetCell(dgrdInformation, dgrdInformation.SelectedIndex, 1);
-            //TextBlock c1 = (TextBlock)c.Content;
-
-            //try
-            //{
-            //    if (int.Parse(c1.Text) >= 25)
-            //    {
-            //        MessageBox.Show("Please enter a value less than 24");
-            //        c1.Text = "0";
-            //        c1.Focus();
-
-            //    }
-            //}
-            //catch(Exception)
-            //{
-            //    MessageBox.Show("Please enter a value less than 24");
-            //}
-           
+            main.Show();
+            this.Close();
         }
     }
 }

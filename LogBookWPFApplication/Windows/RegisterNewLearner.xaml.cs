@@ -27,8 +27,20 @@ namespace LogBookWPFApplication
         public RegisterNewLearner()
         {
             InitializeComponent();
-            
 
+            List<Role> role;
+            using (LogBookApplicationDBEntities db = new LogBookApplicationDBEntities())
+            {
+                role = (from x in db.Roles
+                        select x).ToList();
+
+                foreach (var item in role)
+                {
+                    cmbRole.Items.Add(item.RoleDiscription);
+                    cmbRole.SelectedIndex = item.RoleID - 1;
+                }
+            }
+            cmbRole.SelectedIndex = -1;
         }
 
         public void BindMyData()
@@ -41,22 +53,7 @@ namespace LogBookWPFApplication
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 da.Fill(ds);
                 dgrdAllInfo.ItemsSource = ds.Tables[0].DefaultView;
-                //using (LogBookApplicationDBEntities db = new LogBookApplicationDBEntities())
-                //{
-                //    List<Person> pp = (from x in db.People
-                //                       join y in db.Roles on x.RoleID equals y.RoleID
-                //                       where x.RoleID == y.RoleID
-                //                       select x).ToList();
-                //    List<string> info = new List<string>();
-                //    foreach (var item in pp)
-                //    {
-                //        info.Add(pp.ToString());
-                //        info.Remove(item.RoleID.ToString());
-                //    }
-                //    dgrdAllInfo.ItemsSource = info;
-                //}
-
-
+               
             }
             catch (Exception ex)
             {
@@ -81,10 +78,10 @@ namespace LogBookWPFApplication
             {
                
                 thisConnection.Open();
-                comm = new SqlCommand(string.Format("UPDATE Person SET Name='{0}', Surname='{1}', EmailAddress='{2}', Password='{3}', RoleID='{4}' WHERE PersonID='{5}'", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, cmbRole.SelectedValue, Learner.UserID), thisConnection);
+                comm = new SqlCommand(string.Format("UPDATE Person SET Name='{0}', Surname='{1}', EmailAddress='{2}', Password='{3}', Role='{4}' WHERE PersonID='{5}'", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, cmbRole.SelectedItem.ToString(), Learner.UserID), thisConnection);
                 comm.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Please select a student from the table and update details in the edit section along side.");
             }
@@ -115,7 +112,7 @@ namespace LogBookWPFApplication
             try
             {
                 thisConnection.Open();
-                 comm = new SqlCommand(string.Format("INSERT INTO Person VALUES('{0}','{1}','{2}','{3}','{4}')", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, cmbRole.Text), thisConnection);
+                 comm = new SqlCommand(string.Format("INSERT INTO Person VALUES('{0}','{1}','{2}','{3}','{4}')", txtName.Text, txtSurname.Text, txtEmail.Text, txtPassword.Text, cmbRole.SelectedIndex + 1), thisConnection);
                 comm.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -180,6 +177,19 @@ namespace LogBookWPFApplication
 
            
             
+        }
+
+        private void image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow main = new MainWindow();
+            main.Activate();
+            if (Learner.RoleIdentification == 1)
+            {
+                main.btnUserControl.IsEnabled = false;
+            }
+
+            main.Show();
+            this.Close();
         }
     }
 

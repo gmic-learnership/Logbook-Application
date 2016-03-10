@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogBookWPFApplication"
-        mc:Ignorable="d" 
+        mc:Ignorable="d"  ResizeMode="CanMinimize"
         Title="Login Page" Height="241.666" Width="431.25" Closing="Window_Closing" Icon="/dvtIcon.ico">
     <Grid>
         <Grid.Background>
@@ -21,14 +21,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Button x:Name="btnLogin" Content="Log in" Foreground="#FFE0E0E0" Background="#2b398b"  HorizontalAlignment="Left" Margin="151,175,0,0" VerticalAlignment="Top" Width="120" Click="btnLogin_Click" Height="26" FontFamily="Franklin Gothic Demi" FontSize="16"/>
-        <Image x:Name="imgLogo"  HorizontalAlignment="Center" Height="35" VerticalAlignment="Top" Width="133" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Fill" Margin="151,0,139,0"/>
+        <Image x:Name="imgLogo"  HorizontalAlignment="Center" Height="43" VerticalAlignment="Top" Width="141" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Uniform" Margin="152,0,132,0"/>
         <Canvas Margin="66,62,72,121">
             <Label x:Name="lblUsername" Content="Username:"  Foreground="#FFE0E0E0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Franklin Gothic Demi" FontSize="16"/>
-            <TextBox x:Name="txtUserName"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" TextWrapping="Wrap" Text=""  Width="200" FontFamily="Franklin Gothic Demi" Canvas.Left="85"/>
+            <TextBox x:Name="txtUserName"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="28" TextWrapping="Wrap" Text=""  Width="200" FontFamily="Franklin Gothic Demi" Canvas.Left="85" FontSize="16"/>
         </Canvas>
         <Canvas Margin="69,126,72,57">
             <Label x:Name="lblPassword" Content="Password:" Foreground="#FFE0E0E0" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Franklin Gothic Demi" FontSize="16"/>
-            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="28"  VerticalAlignment="Top" Width="200" FontFamily="Franklin Gothic Demi" Canvas.Left="82"/>
+            <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="28"  VerticalAlignment="Top" Width="200" FontFamily="Franklin Gothic Demi" Canvas.Left="82" FontSize="16"/>
         </Canvas>
     </Grid>
 </Window>

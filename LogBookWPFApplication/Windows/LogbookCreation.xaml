@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogBookWPFApplication"
-        mc:Ignorable="d" 
+        mc:Ignorable="d"  ResizeMode="CanMinimize"
         Title="LogbookCreation" Height="420" Width="1000">
     <Grid>
         <Grid.Background>
@@ -17,7 +17,7 @@
                 <GradientStop Color="White" Offset="0.8"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image x:Name="imgLogo"  HorizontalAlignment="Center" Height="76" VerticalAlignment="Top" Width="223" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Fill" Margin="382,0,387,0"/>
+        <Image x:Name="imgLogo"  HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="250" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Uniform" Margin="382,0,387,0"/>
 
     </Grid>
 </Window>

@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogBookWPFApplication"
-        mc:Ignorable="d" 
+        mc:Ignorable="d" ResizeMode="CanMinimize"
         Title="Welcome" Height="400" Width="700" Closed="Window_Closed" Icon="/dvtIcon.ico">
     <Grid>
         <Grid.Background>
@@ -23,8 +23,8 @@
 
         <Button x:Name="btnUserControl" Foreground="Black"  FontSize="22" FontFamily="Franklin Gothic Demi"  Content="User Control" HorizontalAlignment="Left" Margin="445,86,0,0" VerticalAlignment="Top" Width="190" Height="90"  Click="btnUserControl_Click"/>
         <Button x:Name="btnMonthlyEvaluation" Foreground="Black" FontSize="22" FontFamily="Franklin Gothic Demi"  Content="Monthly Evaluations" HorizontalAlignment="Left" Margin="236,86,0,0" VerticalAlignment="Top" Width="190" Height="90" />
-        <Button x:Name="button"  FontSize="16" FontFamily="Franklin Gothic Demi" Background="#2b398b" Foreground="#FFF" Content="Logout" HorizontalAlignment="Left" Margin="550,318,0,0" VerticalAlignment="Top" Width="117" Click="button_Click" BorderBrush="Black" Height="41"/>
-        <Label x:Name="lblDisplay" FontFamily="Franklin Gothic Demi" Foreground="#fff" Content="Username and Account Image goes here! PLACEHOLDER!" HorizontalAlignment="Left" Margin="384,10,0,0" VerticalAlignment="Top" Width="283" Background="#FF2B398B" Height="50"/>
-        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="71" VerticalAlignment="Top" Width="251" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Fill" Margin="24,0,0,0"/>
+        <Button x:Name="button"  FontSize="16" FontFamily="Franklin Gothic Demi" Background="#2b398b" Foreground="#FFF" Content="Logout" HorizontalAlignment="Left" Margin="550,307,0,0" VerticalAlignment="Top" Width="117" Click="button_Click" BorderBrush="Black" Height="41"/>
+        <Label x:Name="lblDisplay" FontFamily="Franklin Gothic Demi" Foreground="#fff" FontSize="16" Content="Username and Account Image goes here! PLACEHOLDER!" HorizontalAlignment="Left" Margin="384,10,0,0" VerticalAlignment="Top" Width="283" Background="#FF2B398B" Height="50"/>
+        <Image x:Name="imgLogo" HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="250" Source="/LogBookWPFApplication;component/Media/Pictures/logo.png" Stretch="Uniform" Margin="24,0,0,0"/>
     </Grid>
 </Window>
